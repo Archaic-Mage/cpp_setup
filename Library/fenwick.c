@@ -2,7 +2,7 @@
 vector<int> fen;
 
 void fen_add(int idx, int val) {
-    for(;idx<sz(fen); idx += (idx&-idx)) fen[idx] += val;
+    for(;idx<=sz(fen); idx += (idx&-idx)) fen[idx] += val;
 }
 
 int fen_get(int idx) {

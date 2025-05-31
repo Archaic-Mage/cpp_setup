@@ -33,40 +33,15 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 const int MOD = (int)1e9+7;
 const char nl = '\n';
 
-
-
-int noOfcakes(int n, vector<int> arr) {
-    vector<int> toexclude;
-    for(int i = 0; i<sz(arr); i++) {
-        int k = 0;
-        k += (1<<arr[2*i]);
-        k += (1<<arr[2*i + 1]);
-        toexclude.push_back(k);
-    }
-    int ans = 0;
-    for(int i = 0; i<(1<<n); i++) {
-        ans++;
-        for(int j = 0; j<sz(toexclude); j++) {
-            if((toexclude[j] & i) == toexclude[j]) {
-                ans--;
-                break;
-            }
-        }
-    }
-    return ans;
-}
-
 void solve() {
-    cout << noOfcakes(5, {1, 3, 2, 4, 3, 5}) << nl;
-    cout << noOfcakes(2, {});
+
 }
 
 int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int t; t = 1;
+    int t; cin >> t;
     while(t--) solve();
     return 0;
 }
-
